@@ -30,7 +30,7 @@ class PageController extends Controller
                         'roles'   => ['smypage.edit'],
                     ],
                     [
-                        'actions' => ['indexx', 'view'],
+                        'actions' => ['index', 'view'],
                         'allow'   => true,
                         'roles'   => ['smypage.view'],
                     ],
