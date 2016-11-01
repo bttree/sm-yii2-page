@@ -21,17 +21,17 @@ use vova07\imperavi\Widget;
 
     <?= $form->field($model, 'status')->textInput() ?>
 
-    <?= $form->field($model, 'description')->widget(Widget::widget([
-                                                                       'name'     => 'redactor',
-                                                                       'settings' => [
-                                                                           'lang'      => 'ru',
-                                                                           'minHeight' => 200,
-                                                                           'plugins'   => [
-                                                                               'clips',
-                                                                               'fullscreen'
-                                                                           ]
-                                                                       ]
-                                                                   ]));
+    <?= $form->field($model, 'description')->widget(Widget::className(),
+                                                         [
+                                                             'settings' => [
+                                                                 'lang' => 'ru',
+                                                                 'minHeight' => 200,
+                                                                 'plugins' => [
+                                                                     'clips',
+                                                                     'fullscreen'
+                                                                 ]
+                                                             ]
+                                                         ]);
     ?>
 
     <?= $form->field($model, 'seo_title')->textInput(['maxlength' => true]) ?>

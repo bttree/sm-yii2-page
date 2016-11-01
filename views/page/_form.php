@@ -23,17 +23,17 @@ use vova07\imperavi\Widget;
 
     <?= $form->field($model, 'short_description')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'full_description')->widget(Widget::widget([
-                                                                             'name'     => 'redactor',
-                                                                             'settings' => [
-                                                                                 'lang'      => 'ru',
-                                                                                 'minHeight' => 200,
-                                                                                 'plugins'   => [
-                                                                                     'clips',
-                                                                                     'fullscreen'
-                                                                                 ]
-                                                                             ]
-                                                                         ]));
+    <?= $form->field($model, 'full_description')->widget(Widget::className(),
+                                                         [
+                                                             'settings' => [
+                                                                 'lang' => 'ru',
+                                                                 'minHeight' => 200,
+                                                                 'plugins' => [
+                                                                     'clips',
+                                                                     'fullscreen'
+                                                                 ]
+                                                             ]
+                                                         ]);
     ?>
 
     <?= $form->field($model, 'create_time')->textInput() ?>
@@ -47,7 +47,8 @@ use vova07\imperavi\Widget;
     <?= $form->field($model, 'seo_description')->textarea(['rows' => 6]) ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? Yii::t('smy.page', 'Create') : Yii::t('smy.page', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? Yii::t('smy.page', 'Create') : Yii::t('smy.page', 'Update'),
+                               ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
