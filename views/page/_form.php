@@ -19,6 +19,8 @@ use koma136\smypage\models\Page;
 
     <?= $form->field($model, 'slug')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'image')->textInput(['maxlength' => true]) ?>
+
     <?= $form->field($model, 'category_id')->dropDownList(PageCategory::getAllArrayForSelect(), ['prompt'=>'---']) ?>
 
     <?= $form->field($model, 'status')->dropDownList(Page::getStatusArray()) ?>
