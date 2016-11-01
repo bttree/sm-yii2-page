@@ -4,6 +4,7 @@ namespace koma136\smypage\models;
 
 use Yii;
 use yii\db\ActiveRecord;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "page_category".
@@ -90,5 +91,18 @@ class PageCategory extends ActiveRecord
     public static function findBySlug($slug)
     {
         return self::findOne(['slug' => $slug, 'status' => self::STATUS_ACTIVE]);
+    }
+
+    /**
+     * @param integer|null $id
+     * @return array
+     */
+    public static function getAllArrayForSelect($id = null)
+    {
+        $query = self::find();
+        if(!is_null($id)) {
+            $query->where(['!=', 'id', $id]);
+        }
+        return ArrayHelper::map($query->orderBy('id')->asArray()->all(), 'id', 'name');
     }
 }

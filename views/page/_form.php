@@ -3,6 +3,8 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use vova07\imperavi\Widget;
+use koma136\smypage\models\PageCategory;
+use koma136\smypage\models\Page;
 
 /* @var $this yii\web\View */
 /* @var $model koma136\smypage\models\Page */
@@ -17,9 +19,9 @@ use vova07\imperavi\Widget;
 
     <?= $form->field($model, 'slug')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'category_id')->textInput() ?>
+    <?= $form->field($model, 'category_id')->dropDownList(PageCategory::getAllArrayForSelect(), ['prompt'=>'---']) ?>
 
-    <?= $form->field($model, 'status')->textInput() ?>
+    <?= $form->field($model, 'status')->dropDownList(Page::getStatusArray()) ?>
 
     <?= $form->field($model, 'short_description')->textarea(['rows' => 6]) ?>
 
@@ -35,10 +37,6 @@ use vova07\imperavi\Widget;
                                                              ]
                                                          ]);
     ?>
-
-    <?= $form->field($model, 'create_time')->textInput() ?>
-
-    <?= $form->field($model, 'update_time')->textInput() ?>
 
     <?= $form->field($model, 'seo_title')->textInput(['maxlength' => true]) ?>
 

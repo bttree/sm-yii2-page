@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use vova07\imperavi\Widget;
+use koma136\smypage\models\PageCategory;
 
 /* @var $this yii\web\View */
 /* @var $model koma136\smypage\models\PageCategory */
@@ -17,9 +18,9 @@ use vova07\imperavi\Widget;
 
     <?= $form->field($model, 'slug')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'parent_id')->textInput() ?>
+    <?= $form->field($model, 'parent_id')->dropDownList(PageCategory::getAllArrayForSelect($model->id), ['prompt'=>'---']) ?>
 
-    <?= $form->field($model, 'status')->textInput() ?>
+    <?= $form->field($model, 'status')->dropDownList(PageCategory::getStatusArray()) ?>
 
     <?= $form->field($model, 'description')->widget(Widget::className(),
                                                          [
