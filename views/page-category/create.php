@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model koma136\smypage\models\PageCategory */
+/* @var $model bttree\smypage\models\PageCategory */
 
 $this->title = Yii::t('smy.page', 'Create Page Category');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('smy.page', 'Page Categories'), 'url' => ['index']];

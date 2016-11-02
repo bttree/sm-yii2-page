@@ -1,12 +1,12 @@
 <?php
 
-namespace koma136\smypage\models;
+namespace bttree\smypage\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 
 /**
- * PageSearch represents the model behind the search form about `koma136\smypage\models\Page`.
+ * PageSearch represents the model behind the search form about `bttree\smypage\models\Page`.
  */
 class PageSearch extends Page
 {

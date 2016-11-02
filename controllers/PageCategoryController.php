@@ -1,10 +1,10 @@
 <?php
 
-namespace koma136\smypage\controllers;
+namespace bttree\smypage\controllers;
 
 use Yii;
-use koma136\smypage\models\PageCategory;
-use koma136\smypage\models\PageCategorySearch;
+use bttree\smypage\models\PageCategory;
+use bttree\smypage\models\PageCategorySearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;

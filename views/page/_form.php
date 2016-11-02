@@ -3,11 +3,11 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use vova07\imperavi\Widget;
-use koma136\smypage\models\PageCategory;
-use koma136\smypage\models\Page;
+use bttree\smypage\models\PageCategory;
+use bttree\smypage\models\Page;
 
 /* @var $this yii\web\View */
-/* @var $model koma136\smypage\models\Page */
+/* @var $model bttree\smypage\models\Page */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 

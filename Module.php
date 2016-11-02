@@ -1,6 +1,6 @@
 <?php
 
-namespace koma136\smypage;
+namespace bttree\smypage;
 
 use Yii;
 /**
@@ -11,7 +11,7 @@ class Module extends \yii\base\Module
     /**
      * @inheritdoc
      */
-    public $controllerNamespace = 'koma136\smypage\controllers';
+    public $controllerNamespace = 'bttree\smypage\controllers';
 
     /**
      * @inheritdoc
@@ -24,7 +24,7 @@ class Module extends \yii\base\Module
             Yii::$app->i18n->translations['smy.page'] = [
                 'class'          => 'yii\i18n\PhpMessageSource',
                 'sourceLanguage' => 'ru',
-                'basePath'       => '@koma136/smypage/messages'
+                'basePath'       => '@bttree/smypage/messages'
             ];
         }
     }

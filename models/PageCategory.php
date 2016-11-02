@@ -1,6 +1,6 @@
 <?php
 
-namespace koma136\smypage\models;
+namespace bttree\smypage\models;
 
 use Yii;
 use yii\db\ActiveRecord;

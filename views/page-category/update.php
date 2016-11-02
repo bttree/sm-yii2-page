@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model koma136\smypage\models\PageCategory */
+/* @var $model bttree\smypage\models\PageCategory */
 
 $this->title = Yii::t('smy.page', 'Update {modelClass}: ', [
     'modelClass' => 'Page Category',
