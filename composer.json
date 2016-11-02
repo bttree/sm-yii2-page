@@ -21,6 +21,13 @@
     "vova07/yii2-imperavi-widget": "*",
     "bttree/sm-yii2-image": "@dev"
   },
+  "repositories": [
+     {
+      "type": "vcs",
+      "url": "git@bitbucket.org:bttree/sm-yii2-image.git",
+      "reference": "dev-master"
+    }
+  ],
   "autoload": {
     "psr-4": {
       "bttree\\smypage\\": ""
