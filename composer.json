@@ -24,8 +24,7 @@
   "repositories": [
      {
       "type": "vcs",
-      "url": "git@bitbucket.org:bttree/sm-yii2-image.git",
-      "reference": "dev-master"
+      "url": "git@bitbucket.org:bttree/sm-yii2-image.git"
     }
   ],
   "autoload": {
