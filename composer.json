@@ -1,11 +1,11 @@
 {
-  "name": "koma136/sm-yii2-page",
+  "name": "bttree/sm-yii2-page",
   "description": "SM page",
   "keywords": [
     "yii2"
   ],
   "minimum-stability": "stable",
-  "homepage": "https://bitbucket.org/koma136/sm-yii2-page",
+  "homepage": "https://bitbucket.org/bttree/sm-yii2-page",
   "type": "yii2-extension",
   "license": "BSD-3",
   "authors": [
@@ -22,7 +22,7 @@
   },
   "autoload": {
     "psr-4": {
-      "koma136\\smypage\\": ""
+      "bttree\\smypage\\": ""
     }
   },
   "extra": {
