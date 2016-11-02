@@ -7,7 +7,6 @@
   "homepage": "https://bitbucket.org/bttree/sm-yii2-page",
   "type": "yii2-extension",
   "license": "BSD-3",
-  "version": "1.0.1",
   "authors": [
     {
       "name": "Anton Sitnikov",
@@ -19,14 +18,8 @@
     "yiisoft/yii2": "~2.0.7",
     "kartik-v/yii2-widget-select2": "@dev",
     "vova07/yii2-imperavi-widget": "*",
-    "bttree/sm-yii2-image": "~1.0"
+    "bttree/sm-yii2-image": "@dev"
   },
-  "repositories": [
-     {
-      "type": "vcs",
-      "url": "git@bitbucket.org:bttree/sm-yii2-image.git"
-    }
-  ],
   "autoload": {
     "psr-4": {
       "bttree\\smypage\\": ""
