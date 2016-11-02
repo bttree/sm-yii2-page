@@ -4,7 +4,6 @@
   "keywords": [
     "yii2"
   ],
-  "minimum-stability": "stable",
   "homepage": "https://bitbucket.org/bttree/sm-yii2-page",
   "type": "yii2-extension",
   "license": "BSD-3",
