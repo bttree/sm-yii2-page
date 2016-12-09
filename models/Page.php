@@ -2,6 +2,7 @@
 
 namespace bttree\smypage\models;
 
+use bttree\smyimage\behaviors\ImageUploadBehavior;
 use Yii;
 use yii\db\ActiveRecord;
 
@@ -54,6 +55,19 @@ class Page extends ActiveRecord
                 'skipOnError'     => true,
                 'targetClass'     => PageCategory::className(),
                 'targetAttribute' => ['category_id' => 'id']
+            ],
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function behaviors()
+    {
+        return [
+            'imageUploadBehavior' => [
+                'class'     => ImageUploadBehavior::className(),
+                'attribute' => 'image',
             ],
         ];
     }
