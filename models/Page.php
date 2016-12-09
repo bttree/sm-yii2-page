@@ -66,7 +66,7 @@ class Page extends ActiveRecord
     {
         return [
             'imageUploadBehavior' => [
-                'class'     => ImageUploadBehavior::className(),
+                'class'     =>  ImageUploadBehavior::className(),
                 'attribute' => 'image',
             ],
         ];
