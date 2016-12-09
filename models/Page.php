@@ -48,7 +48,7 @@ class Page extends ActiveRecord
             [['category_id', 'status'], 'integer'],
             [['short_description', 'full_description', 'seo_keywords', 'seo_description'], 'string'],
             [['create_time', 'update_time'], 'safe'],
-            [['name', 'slug', 'seo_title', 'image'], 'string', 'max' => 255],
+            [['name', 'slug', 'seo_title'], 'string', 'max' => 255],
             [
                 ['category_id'],
                 'exist',
