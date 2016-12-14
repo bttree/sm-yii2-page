@@ -3,6 +3,7 @@
 namespace bttree\smypage\models;
 
 use Yii;
+use yii\behaviors\SluggableBehavior;
 use yii\db\ActiveRecord;
 use yii\helpers\ArrayHelper;
 
@@ -104,5 +105,20 @@ class PageCategory extends ActiveRecord
             $query->where(['!=', 'id', $id]);
         }
         return ArrayHelper::map($query->orderBy('id')->asArray()->all(), 'id', 'name');
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function behaviors()
+    {
+        return [
+            [
+                'class'         => SluggableBehavior::className(),
+                'attribute'     => 'name',
+                'slugAttribute' => 'slug',
+                'ensureUnique'  => true
+            ],
+        ];
     }
 }

@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use vova07\imperavi\Widget;
 use bttree\smypage\models\PageCategory;
+use bttree\smywidgets\widgets\SlugWidget;
 
 /* @var $this yii\web\View */
 /* @var $model bttree\smypage\models\PageCategory */
@@ -16,7 +17,12 @@ use bttree\smypage\models\PageCategory;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'slug')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'slug')->widget(SlugWidget::className(),
+                                             [
+                                                 'sourceFieldSelector' => '#page-category-name',
+                                                 'url'                 => ['page-category/get-model-slug'],
+                                                 'options' => ['class' => 'form-control']
+                                             ]); ?>
 
     <?= $form->field($model, 'parent_id')->dropDownList(PageCategory::getAllArrayForSelect($model->id), ['prompt'=>'---']) ?>
 

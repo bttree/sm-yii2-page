@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use bttree\smywidgets\actions\GetModelSlugAction;
 
 /**
  * PageController implements the CRUD actions for Page model.
@@ -25,7 +26,7 @@ class PageController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['create', 'update', 'delete'],
+                        'actions' => ['create', 'update', 'delete', 'get-model-slug'],
                         'allow'   => true,
                         'roles'   => ['smypage.edit'],
                     ],
@@ -41,6 +42,19 @@ class PageController extends Controller
                 'actions' => [
                     'delete' => ['POST'],
                 ],
+            ],
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function actions()
+    {
+        return [
+            'get-model-slug' => [
+                'class'     => GetModelSlugAction::className(),
+                'modelName' => Page::className()
             ],
         ];
     }

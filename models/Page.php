@@ -4,6 +4,7 @@ namespace bttree\smypage\models;
 
 use bttree\smyimage\behaviors\ImageUploadBehavior;
 use Yii;
+use yii\behaviors\SluggableBehavior;
 use yii\db\ActiveRecord;
 
 /**
@@ -65,8 +66,14 @@ class Page extends ActiveRecord
     public function behaviors()
     {
         return [
+            [
+                'class'         => SluggableBehavior::className(),
+                'attribute'     => 'name',
+                'slugAttribute' => 'slug',
+                'ensureUnique'  => true
+            ],
             'imageUploadBehavior' => [
-                'class'     =>  ImageUploadBehavior::className(),
+                'class'     => ImageUploadBehavior::className(),
                 'attribute' => 'image',
             ],
         ];

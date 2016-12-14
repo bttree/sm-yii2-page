@@ -39,4 +39,14 @@ return [
     'Sort'               => 'Позиция',
     'Permissions'        => 'Разрешения',
     'Select roles...'    => 'Выберите роли ...',
+    'Full Description'   => 'Полное описание',
+    'Short Description'  => 'Короткое описание',
+    'Category ID'        => 'Категория',
+    'Slug'               => 'Слаг',
+    'Create Time'        => 'Время создания',
+    'Update Time'        => 'Время обновления',
+
+    'Seo Description' => 'Seo описание',
+    'Seo Keywords'    => 'Seo ключевые слова',
+    'Seo Title'       => 'Seo заголово',
 ];
