@@ -25,12 +25,15 @@ class NewPagesWidget extends Widget
 
     public function run()
     {
-        $order = Page::find()->limit($this->limit)->orderBy('page.create_time');
+        $order = Page::find()
+            ->where(['page.status' => Page::STATUS_ACTIVE])
+            ->limit($this->limit)
+            ->orderBy('page.create_time');
 
         if(isset($this->categorySlug)) {
-            $category = PageCategory::findOne(['slug' => $this->categorySlug]);
+            $category = PageCategory::findBySlug($this->categorySlug);
 
-            $order->joinWith('category')->where(['page_category.id' => $category->id]);
+            $order->joinWith('category')->andWhere(['page_category.id' => $category->id]);
         } else {
             $category = null;
         }
