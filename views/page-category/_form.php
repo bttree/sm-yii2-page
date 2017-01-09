@@ -19,7 +19,7 @@ use bttree\smywidgets\widgets\SlugWidget;
 
     <?= $form->field($model, 'slug')->widget(SlugWidget::className(),
                                              [
-                                                 'sourceFieldSelector' => '#page-category-name',
+                                                 'sourceFieldSelector' => '#pagecategory-name',
                                                  'url'                 => ['page-category/get-model-slug'],
                                                  'options' => ['class' => 'form-control']
                                              ]); ?>

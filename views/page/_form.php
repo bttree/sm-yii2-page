@@ -25,7 +25,14 @@ use bttree\smywidgets\widgets\SlugWidget;
                                                  'options' => ['class' => 'form-control']
                                              ]); ?>
 
-    <?= $form->field($model, 'image')->textInput(['maxlength' => true]) ?>
+    <?php if (!empty($model->image)): ?>
+        <div class="form-group congcards-box text-center">
+            <?= Html::img($model->getImageUrl(300, 300),
+                          ['class' => 'img-thumbnail congcards-pic', 'alt' => $model->name]) ?>
+        </div>
+    <?php endif; ?>
+    <?= $form->field($model, 'image')
+             ->fileInput(['accept' => 'image/*']) ?>
 
     <?= $form->field($model, 'category_id')->dropDownList(PageCategory::getAllArrayForSelect(), ['prompt'=>'---']) ?>
 
