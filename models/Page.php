@@ -16,6 +16,7 @@ use yii\db\ActiveRecord;
  * @property string       $slug
  * @property integer      $category_id
  * @property integer      $status
+ * @property integer      $type
  * @property string       $short_description
  * @property string       $full_description
  * @property string       $create_time
@@ -30,6 +31,9 @@ class Page extends ActiveRecord
 {
     const STATUS_DISABLED = 0;
     const STATUS_ACTIVE   = 1;
+
+    const TYPE_PAGE  = 0;
+    const TYPE_BLOCK = 1;
 
     /**
      * @inheritdoc
@@ -46,7 +50,7 @@ class Page extends ActiveRecord
     {
         return [
             [['name', 'slug'], 'required'],
-            [['category_id', 'status'], 'integer'],
+            [['category_id', 'status', 'type'], 'integer'],
             [['short_description', 'full_description', 'seo_keywords', 'seo_description'], 'string'],
             [['create_time', 'update_time'], 'safe'],
             [['name', 'slug', 'seo_title'], 'string', 'max' => 255],
@@ -98,6 +102,7 @@ class Page extends ActiveRecord
             'seo_keywords'      => Yii::t('smy.page', 'Seo Keywords'),
             'seo_description'   => Yii::t('smy.page', 'Seo Description'),
             'image'             => Yii::t('smy.page', 'Image'),
+            'type'              => Yii::t('smy.page', 'Type'),
         ];
     }
 
@@ -121,11 +126,40 @@ class Page extends ActiveRecord
     }
 
     /**
+     * @return array
+     */
+    public static function getTypeArray()
+    {
+        /**
+         * @var $module     \bttree\smyrbac\Module
+         */
+        $module = Yii::$app->controller->module;
+
+        $baseArray = [
+            self::TYPE_PAGE  => Yii::t('smy.page', 'Page'),
+            self::TYPE_BLOCK => Yii::t('smy.page', 'Content block'),
+        ];
+
+        $additionalTypes = $module->pageTypes;
+
+        return array_merge($baseArray, $additionalTypes);
+    }
+
+    /**
      * @param string $slug
      * @return static|null
      */
     public static function findBySlug($slug)
     {
         return self::findOne(['slug' => $slug, 'status' => self::STATUS_ACTIVE]);
+    }
+
+    public function beforeValidate()
+    {
+        if($this->type === null) {
+            $this->type = self::TYPE_PAGE;
+        }
+
+        return parent::beforeValidate();
     }
 }

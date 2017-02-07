@@ -18,26 +18,28 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a(Yii::t('smy.page', 'Create Page'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-<?php Pjax::begin(); ?>    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+    <?php Pjax::begin(); ?>    <?= GridView::widget([
+                                                        'dataProvider' => $dataProvider,
+                                                        'filterModel' => $searchModel,
+                                                        'columns' => [
+                                                            ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'name',
-            'slug',
-            'category_id',
-            'status',
-            // 'short_description:ntext',
-            // 'full_description:ntext',
-            // 'create_time',
-            // 'update_time',
-            // 'seo_title',
-            // 'seo_keywords:ntext',
-            // 'seo_description:ntext',
+                                                            'id',
+                                                            'name',
+                                                            'slug',
+                                                            'category_id',
+                                                            'status',
+                                                            'type',
+                                                            // 'short_description:ntext',
+                                                            // 'full_description:ntext',
+                                                            // 'create_time',
+                                                            // 'update_time',
+                                                            // 'seo_title',
+                                                            // 'seo_keywords:ntext',
+                                                            // 'seo_description:ntext',
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
-<?php Pjax::end(); ?></div>
+                                                            ['class' => 'yii\grid\ActionColumn'],
+                                                        ],
+                                                    ]); ?>
+    <?php Pjax::end(); ?>
+</div>

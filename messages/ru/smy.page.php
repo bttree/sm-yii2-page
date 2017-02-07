@@ -45,6 +45,8 @@ return [
     'Slug'               => 'Слаг',
     'Create Time'        => 'Время создания',
     'Update Time'        => 'Время обновления',
+    'Page'               => 'Страница',
+    'Content block'      => 'Блок контента',
 
     'Seo Description' => 'Seo описание',
     'Seo Keywords'    => 'Seo ключевые слова',

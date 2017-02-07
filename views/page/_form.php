@@ -38,6 +38,8 @@ use bttree\smywidgets\widgets\SlugWidget;
 
     <?= $form->field($model, 'status')->dropDownList(Page::getStatusArray()) ?>
 
+    <?= $form->field($model, 'type')->dropDownList(Page::getTypeArray()) ?>
+
     <?= $form->field($model, 'short_description')->textarea(['rows' => 6]) ?>
 
     <?= $form->field($model, 'full_description')->widget(Widget::className(),

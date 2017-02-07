@@ -13,13 +13,15 @@ class Module extends \yii\base\Module
      */
     public $controllerNamespace = 'bttree\smypage\controllers';
 
+    public $pageTypes = [];
+
     /**
      * @inheritdoc
      */
     public function init()
     {
         parent::init();
-        
+
         if (!isset(Yii::$app->i18n->translations['smy.page'])) {
             Yii::$app->i18n->translations['smy.page'] = [
                 'class'          => 'yii\i18n\PhpMessageSource',
