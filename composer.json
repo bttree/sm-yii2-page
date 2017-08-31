@@ -18,12 +18,17 @@
         {
             "type": "vcs",
             "url": "git@bitbucket.org:bttree/sm-yii2-image.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@bitbucket.org:bttree/sm-yii2-tag.git"
         }
   ],
   "require": {
     "yiisoft/yii2": "~2.0.7",
     "bttree/sm-yii2-image": "*",
-    "bttree/sm-yii2-widgets": "dev-dev"
+    "bttree/sm-yii2-widgets": "dev-dev",
+    "bttree/sm-yii2-tag": "dev-dev"
   },
   "autoload": {
     "psr-4": {

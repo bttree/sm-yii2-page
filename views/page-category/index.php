@@ -29,12 +29,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'slug',
             'parent_id',
             'status',
-            // 'description:ntext',
-            // 'seo_title',
-            // 'seo_keywords:ntext',
-            // 'seo_description:ntext',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'class'    => 'yii\grid\ActionColumn',
+                'template' => '{update} {delete}'
+            ],
         ],
     ]); ?>
 <?php Pjax::end(); ?></div>

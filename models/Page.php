@@ -2,6 +2,7 @@
 
 namespace bttree\smypage\models;
 
+use bttree\smytag\behaviors\TagBehavior;
 use bttree\smyimage\behaviors\ImageUploadBehavior;
 use Yii;
 use yii\behaviors\SluggableBehavior;
@@ -26,6 +27,8 @@ use yii\db\ActiveRecord;
  * @property string       $seo_description
  *
  * @property PageCategory $category
+ *
+ * @method  getTags()
  */
 class Page extends ActiveRecord
 {
@@ -34,6 +37,11 @@ class Page extends ActiveRecord
 
     const TYPE_PAGE  = 0;
     const TYPE_BLOCK = 1;
+
+    /**
+     * @var array
+     */
+    public $tags = [];
 
     /**
      * @inheritdoc
@@ -52,7 +60,7 @@ class Page extends ActiveRecord
             [['name', 'slug'], 'required'],
             [['category_id', 'status', 'type'], 'integer'],
             [['short_description', 'full_description', 'seo_keywords', 'seo_description'], 'string'],
-            [['create_time', 'update_time'], 'safe'],
+            [['create_time', 'update_time', 'tags'], 'safe'],
             [['name', 'slug', 'seo_title'], 'string', 'max' => 255],
             [
                 ['category_id'],
@@ -70,6 +78,10 @@ class Page extends ActiveRecord
     public function behaviors()
     {
         return [
+            'smytag'              => [
+                'class'     => TagBehavior::className(),
+                'attribute' => 'tags',
+            ],
             [
                 'class'         => SluggableBehavior::className(),
                 'attribute'     => 'name',
@@ -156,7 +168,7 @@ class Page extends ActiveRecord
 
     public function beforeValidate()
     {
-        if($this->type === null) {
+        if ($this->type === null) {
             $this->type = self::TYPE_PAGE;
         }
 

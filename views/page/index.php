@@ -30,15 +30,11 @@ $this->params['breadcrumbs'][] = $this->title;
                                                             'category_id',
                                                             'status',
                                                             'type',
-                                                            // 'short_description:ntext',
-                                                            // 'full_description:ntext',
-                                                            // 'create_time',
-                                                            // 'update_time',
-                                                            // 'seo_title',
-                                                            // 'seo_keywords:ntext',
-                                                            // 'seo_description:ntext',
 
-                                                            ['class' => 'yii\grid\ActionColumn'],
+                                                            [
+                                                                'class'    => 'yii\grid\ActionColumn',
+                                                                'template' => '{update} {delete}'
+                                                            ],
                                                         ],
                                                     ]); ?>
     <?php Pjax::end(); ?>

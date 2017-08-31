@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use vova07\imperavi\Widget;
+use bttree\smywidgets\widgets\TextEditorWidget;
 use bttree\smypage\models\PageCategory;
 use bttree\smywidgets\widgets\SlugWidget;
 
@@ -28,17 +28,14 @@ use bttree\smywidgets\widgets\SlugWidget;
 
     <?= $form->field($model, 'status')->dropDownList(PageCategory::getStatusArray()) ?>
 
-    <?= $form->field($model, 'description')->widget(Widget::className(),
-                                                         [
-                                                             'settings' => [
-                                                                 'lang' => 'ru',
-                                                                 'minHeight' => 200,
-                                                                 'plugins' => [
-                                                                     'clips',
-                                                                     'fullscreen'
-                                                                 ]
-                                                             ]
-                                                         ]);
+    <?= $form->field($model, 'description')->widget(TextEditorWidget::className(),
+                                                    [
+                                                        'editor'   => 'imperavi',
+                                                        'settings' => [
+                                                            'lang'      => 'ru',
+                                                            'minHeight' => 200,
+                                                        ]
+                                                    ]);
     ?>
 
     <?= $form->field($model, 'seo_title')->textInput(['maxlength' => true]) ?>
