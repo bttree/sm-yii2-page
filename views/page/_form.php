@@ -8,7 +8,7 @@ use bttree\smypage\models\Page;
 use bttree\smywidgets\widgets\SlugWidget;
 
 /* @var $this yii\web\View */
-/* @var $model bttree\smypage\models\Page */
+/* @var $model bttree\smypage\models\Page  */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
