@@ -14,6 +14,8 @@ use yii\db\ActiveRecord;
  * @property integer      $id
  * @property string       $name
  * @property string       $image
+ * @property string       $view
+ * @property string       $layout
  * @property string       $slug
  * @property integer      $category_id
  * @property integer      $status
@@ -61,7 +63,7 @@ class Page extends ActiveRecord
             [['category_id', 'status', 'type'], 'integer'],
             [['short_description', 'full_description', 'seo_keywords', 'seo_description'], 'string'],
             [['create_time', 'update_time', 'tags'], 'safe'],
-            [['name', 'slug', 'seo_title'], 'string', 'max' => 255],
+            [['name', 'slug', 'seo_title', 'view', 'layout'], 'string', 'max' => 255],
             [
                 ['category_id'],
                 'exist',
@@ -115,6 +117,8 @@ class Page extends ActiveRecord
             'seo_description'   => Yii::t('smy.page', 'Seo Description'),
             'image'             => Yii::t('smy.page', 'Image'),
             'type'              => Yii::t('smy.page', 'Type'),
+            'view'              => Yii::t('smy.page', 'View'),
+            'layout'            => Yii::t('smy.page', 'Layout'),
         ];
     }
 
