@@ -8,7 +8,7 @@ use bttree\smypage\models\Page;
 use bttree\smywidgets\widgets\SlugWidget;
 
 /* @var $this yii\web\View */
-/* @var $model bttree\smypage\models\Page  */
+/* @var $model bttree\smypage\models\Page */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
@@ -24,7 +24,7 @@ use bttree\smywidgets\widgets\SlugWidget;
                                                                        [
                                                                            'sourceFieldSelector' => '#page-name',
                                                                            'url'                 => ['page/get-model-slug'],
-                                                                           'options' => ['class' => 'form-control']
+                                                                           'options'             => ['class' => 'form-control']
                                                                        ]); ?>
         </div>
     </div>
@@ -33,7 +33,8 @@ use bttree\smywidgets\widgets\SlugWidget;
             <?= $form->field($model, 'status')->dropDownList(Page::getStatusArray()) ?>
         </div>
         <div class="col-sm-4">
-            <?= $form->field($model, 'category_id')->dropDownList(PageCategory::getAllArrayForSelect(), ['prompt'=>'---']) ?>
+            <?= $form->field($model, 'category_id')
+                     ->dropDownList(PageCategory::getAllArrayForSelect(), ['prompt' => '---']) ?>
         </div>
         <div class="col-sm-4">
             <?= $form->field($model, 'type')->dropDownList(Page::getTypeArray()) ?>
@@ -67,7 +68,7 @@ use bttree\smywidgets\widgets\SlugWidget;
     ?>
 
     <?= $form->field($model, 'tags')->widget(\bttree\smytag\widgets\TagWidget::className(),
-                                                         []);
+                                             []);
     ?>
 
     <hr>
@@ -80,6 +81,15 @@ use bttree\smywidgets\widgets\SlugWidget;
         </div>
         <div class="col-sm-6">
             <?= $form->field($model, 'seo_description')->textarea(['rows' => 6]) ?>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <?= $form->field($model, 'layout')->textInput(['maxlength' => true]) ?>
+        </div>
+        <div class="col-sm-6">
+            <?= $form->field($model, 'view')->textInput(['maxlength' => true]) ?>
         </div>
     </div>
 
