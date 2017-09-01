@@ -11,7 +11,6 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use bttree\smywidgets\actions\GetModelSlugAction;
-use yii\web\NotFoundHttpException;
 
 /**
  * FrontPageController implements the CRUD actions for Page model.
