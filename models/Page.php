@@ -88,6 +88,7 @@ class Page extends ActiveRecord
                 'class'         => SluggableBehavior::className(),
                 'attribute'     => 'name',
                 'slugAttribute' => 'slug',
+                'immutable'     => true,
                 'ensureUnique'  => true
             ],
             'imageUploadBehavior' => [

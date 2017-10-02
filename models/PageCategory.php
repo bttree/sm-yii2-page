@@ -101,9 +101,10 @@ class PageCategory extends ActiveRecord
     public static function getAllArrayForSelect($id = null)
     {
         $query = self::find();
-        if(!is_null($id)) {
+        if (!is_null($id)) {
             $query->where(['!=', 'id', $id]);
         }
+
         return ArrayHelper::map($query->orderBy('id')->asArray()->all(), 'id', 'name');
     }
 
@@ -117,6 +118,7 @@ class PageCategory extends ActiveRecord
                 'class'         => SluggableBehavior::className(),
                 'attribute'     => 'name',
                 'slugAttribute' => 'slug',
+                'immutable'     => true,
                 'ensureUnique'  => true
             ],
         ];
