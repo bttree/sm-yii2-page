@@ -58,6 +58,7 @@ class FrontPageController extends Controller
 
         $dataProvider = new ActiveDataProvider([
                                                    'query' => $query,
+                                                   'sort' => ['defaultOrder' => ['update_time' => SORT_DESC]],
                                                ]);
 
         return $this->render('index',
