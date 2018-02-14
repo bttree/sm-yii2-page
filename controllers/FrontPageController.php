@@ -53,7 +53,7 @@ class FrontPageController extends Controller
         $query = Page::find()->where(['status' => Page::STATUS_ACTIVE, 'type' => Page::TYPE_PAGE]);
 
         if (null !== ($category = PageCategory::findBySlug($categorySlug))) {
-            $query->where(['category_id' => $category->id]);
+            $query->andWhere(['category_id' => $category->id]);
         }
 
         $dataProvider = new ActiveDataProvider([
